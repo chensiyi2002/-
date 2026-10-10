@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>chensiyi｜个人作品集</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #10120f;
+  --panel: #171a15;
+  --panel-light: #20251d;
+  --line: rgba(210, 255, 117, .25);
+  --text: #f2f5e9;
+  --muted: #aeb5a3;
+  --green: #d5ff73;
+  --orange: #ff714b;
+  --yellow: #f5d66a;
+  --radius: 20px;
 }
 
 * {
@@ -208,4 +229,568 @@ a {
   font-size: 13px;
 }
 
+.section-title {
+  font-size: clamp(42px, 7vw, 92px);
+  line-height: .95;
+  letter-spacing: -.07em;
+}
 
+.section-intro {
+  color: var(--muted);
+  max-width: 290px;
+  font-size: 14px;
+}
+
+.education-list {
+  display: grid;
+  gap: 16px;
+}
+
+.education-card,
+.experience-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px;
+  background: rgba(23,26,21,.72);
+  transition: transform .35s ease, border-color .35s ease, background .35s ease;
+}
+
+.education-card:hover,
+.experience-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--green);
+  background: var(--panel-light);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--green);
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.education-card h3,
+.experience-card h3 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.education-card p,
+.experience-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.experience-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.experience-card.featured {
+  border-color: var(--orange);
+  background: linear-gradient(120deg, rgba(255,113,75,.12), rgba(23,26,21,.7));
+}
+
+.experience-card.featured .card-top {
+  color: var(--orange);
+}
+
+.company {
+  color: var(--yellow);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.role {
+  font-size: 23px;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.detail {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.detail strong {
+  color: var(--text);
+}
+
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: start;
+}
+
+.metric {
+  min-width: 120px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(213,255,115,.08);
+  border: 1px solid rgba(213,255,115,.2);
+}
+
+.metric b {
+  display: block;
+  color: var(--green);
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.project-links a {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid rgba(213,255,115,.35);
+  border-radius: 999px;
+  color: var(--green);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  transition: background .25s ease, color .25s ease;
+}
+
+.project-links a:hover {
+  background: var(--green);
+  color: var(--bg);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.skill {
+  min-height: 180px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skill-number {
+  color: var(--orange);
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+}
+
+.skill h3 {
+  font-size: 23px;
+}
+
+.contact {
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact h2 {
+  max-width: 950px;
+  font-size: clamp(48px, 8vw, 110px);
+  line-height: .92;
+  letter-spacing: -.08em;
+}
+
+.contact h2 span {
+  color: var(--green);
+}
+
+.email {
+  display: inline-block;
+  margin-top: 45px;
+  color: var(--green);
+  font-family: "DM Mono", monospace;
+  font-size: clamp(18px, 3vw, 30px);
+  border-bottom: 1px solid var(--green);
+  padding-bottom: 8px;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+  .container,
+  .nav-inner {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    min-height: 780px;
+    padding-top: 130px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 17vw, 100px);
+  }
+
+  .orbit {
+    width: 230px;
+    margin-bottom: 0;
+  }
+
+  .section {
+    padding: 82px 0;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-intro {
+    margin-top: 20px;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer span {
+    display: block;
+    margin-top: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">PORTFOLIO / 2026</a>
+    <div class="nav-links">
+      <a href="#about">关于</a>
+      <a href="#experience">经历</a>
+      <a href="#skills">技能</a>
+      <a href="#contact">联系</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">Visual Media / Marketing / Strategy</div>
+      <h1>CHEN<span>SIYI</span></h1>
+      <p class="hero-copy">
+        在内容、媒介与品牌之间建立连接。专注于新品上市营销、达人资源整合与内容策略优化。
+      </p>
+      <div class="scroll-note">↓ SCROLL TO EXPLORE</div>
+    </div>
+
+    <div class="orbit">
+      <div class="orbit-label">IDEAS<br>IN MOTION</div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-number">01 / EDUCATION</div>
+        <h2 class="section-title">教育经历</h2>
+      </div>
+      <p class="section-intro">持续研究艺术、媒介与社会之间的关系。</p>
+    </div>
+
+    <div class="education-list">
+      <article class="education-card">
+        <div class="card-top">
+          <span>2024.09 — 2027.06</span>
+          <span>南京 · 中国</span>
+        </div>
+        <h3>研究生 · 南京师范大学</h3>
+        <p>主修：艺术学 · 视听传媒艺术理论</p>
+        <p>相关课程：艺术学概论、媒介与社会、影视传播方法等</p>
+      </article>
+
+      <article class="education-card">
+        <div class="card-top">
+          <span>2020.09 — 2024.06</span>
+          <span>成都 · 中国</span>
+        </div>
+        <h3>本科 · 四川师范大学</h3>
+        <p>主修：戏剧影视文学</p>
+        <p>相关课程：艺术学概论、新媒体策划、导演等</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-number">02 / SELECTED WORK</div>
+        <h2 class="section-title">案例展示</h2>
+      </div>
+      <p class="section-intro">从策略、创意到执行，完成内容营销项目闭环。</p>
+    </div>
+
+    <div class="experience-grid">
+
+      <article class="experience-card featured">
+        <div>
+          <div class="card-top">
+            <span>01</span>
+            <span>美妆护肤</span>
+          </div>
+          <div class="company">杭州珀莱雅化妆品股份有限公司</div>
+          <h3 class="role">市场营销实习生</h3>
+          <p class="detail">2025年5月 — 2026年4月</p>
+          <p class="detail" style="margin-top:18px;">
+            参与 off&relax 小红书新品营销规划，基于用户洞察与竞品分析提炼核心卖点，制定“种草 + 转化”传播策略。
+          </p>
+          <div class="project-links">
+            <a href="https://www.xiaohongshu.com/discovery/item/69d7119d00000000230159f3" target="_blank">新品上市预热笔记 ↗</a>
+            <a href="https://www.xiaohongshu.com/discovery/item/6879e47d000000001202f40b?source=webshare&xhsshare=pc_web&xsec_token=AB3j4h41jXWlv5fcv4TdY9e5HKBHv-sByUi7IS03lo5qw=&xsec_source=pc_share" target="_blank">高进店转化笔记 ↗</a>
+            <a href="https://www.xiaohongshu.com/discovery/item/68aea4dd000000001c00e877？source=webshare&xhsshare=pc_web&xsec_token=AB950VNexcRIjwqspPZZt0Vd9H0gpnGTl5kC_mQUUjYL0=&xsec_source=pc_share" target="_blank">大曝光笔记 ↗</a>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <b>428万+</b>
+            <span>项目累计曝光</span>
+          </div>
+          <div class="metric">
+            <b>17万+</b>
+            <span>单篇阅读量</span>
+          </div>
+          <div class="metric">
+            <b>1.2万+</b>
+            <span>站外活跃 UV</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="experience-card">
+        <div>
+          <div class="card-top">
+            <span>02</span>
+            <span>美妆护肤</span>
+          </div>
+          <div class="company">杭州拓谱文化传媒有限公司</div>
+          <h3 class="role">媒介执行实习生</h3>
+          <p class="detail">2023年12月 — 2024年5月</p>
+          <p class="detail" style="margin-top:18px;">
+            独立匹配小红书、抖音达人资源 100+，完成从建联到内容发布的完整闭环。根据品牌调性调整达人脚本，提升内容转化率。
+          </p>
+          <div class="project-links">
+            <a href="https://www.douyin.com/video/7360262792466795813" target="_blank">夏天妹妹*丸美 ↗</a>
+            <a href="https://www.douyin.com/video/7359585372138966310" target="_blank">摇铃啊摇铃儿*丸美 ↗</a>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <b>500W+</b>
+            <span>抖音单篇曝光</span>
+          </div>
+          <div class="metric">
+            <b>60%</b>
+            <span>小红书爆文率</span>
+          </div>
+          <div class="metric">
+            <b>98%</b>
+            <span>活动舆情正向率</span>
+          </div>
+          <div class="metric">
+            <b>82.1万+</b>
+            <span>抖音单篇点赞</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="experience-card">
+        <div>
+          <div class="card-top">
+            <span>03</span>
+            <span>电子消费品</span>
+          </div>
+          <div class="company">影石创新科技股份有限公司</div>
+          <h3 class="role">市场营销实习生</h3>
+          <p class="detail">2026年5月 — 2026年8月</p>
+          <p class="detail" style="margin-top:18px;">
+            参与影石 Luna Ultra 与 AcePro2 系列产品上新项目，负责平台内容传播与新品营销执行。
+          </p>
+          <div class="project-links">
+            <a href="https://v.douyin.com/rbjaldECW7s/" target="_blank">Luna Ultra ↗</a>
+            <a href="https://www.xiaohongshu.com/discovery/item/6a5251080000000007028d0e" target="_blank">Luna Ultra-演唱会曝光内容 ↗</a>
+            <a href="https://v.douyin.com/1OZ6p668rvI/" target="_blank">Ace Pro2 ↗</a>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <b>129万+</b>
+            <span>小红书总曝光</span>
+          </div>
+          <div class="metric">
+            <b>2万+</b>
+            <span>小红书点赞</span>
+          </div>
+          <div class="metric">
+            <b>10万+</b>
+            <span>抖音点赞</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="experience-card">
+        <div>
+          <div class="card-top">
+            <span>04</span>
+            <span>汽车行业</span>
+          </div>
+          <div class="company">杭州如涵数字科技有限公司</div>
+          <h3 class="role">媒介执行实习生</h3>
+          <p class="detail">2025年1月 — 2025年3月</p>
+          <p class="detail" style="margin-top:18px;">
+            参与零跑汽车品牌小红书渠道内容投放，累计审核素人笔记 400+，使用 Excel 进行数据统计与整理，并优化团队执行 SOP。
+          </p>
+          <div class="project-links">
+            <a href="https://www.xiaohongshu.com/discovery/item/679388c1000000002900e6f3" target="_blank">零跑素人笔记 ↗</a>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <b>400+</b>
+            <span>审核素人笔记</span>
+          </div>
+          <div class="metric">
+            <b>SOP</b>
+            <span>流程优化</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-number">03 / TOOLKIT</div>
+        <h2 class="section-title">技能工具</h2>
+      </div>
+      <p class="section-intro">用工具提高效率，用内容创造价值。</p>
+    </div>
+
+    <div class="skills">
+      <div class="skill">
+        <span class="skill-number">01</span>
+        <h3>AI 工具</h3>
+        <p class="detail">能够使用 AI 工具提升资料整理、内容策划与日常工作效率。</p>
+      </div>
+
+      <div class="skill">
+        <span class="skill-number">02</span>
+        <h3>Excel</h3>
+        <p class="detail">熟练进行数据统计、内容投放管理与项目执行追踪。</p>
+      </div>
+
+      <div class="skill">
+        <span class="skill-number">03</span>
+        <h3>PPT / Office</h3>
+        <p class="detail">熟练使用 Office 办公软件，完成提案、汇报与项目资料整理。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact reveal" id="contact">
+  <div class="container">
+    <div class="section-number">04 / CONTACT</div>
+    <h2>Let's make<br><span>something move.</span></h2>
+    <a class="email" href="mailto:18814818743@163.com">18814818743@163.com ↗</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer container">
+  <span>© 2026 Marketing</span>
+  <span>南京 / 杭州 / 成都/深圳</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: .12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
